@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BookNER</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index_styles.css') }}">
+</head>
+<body>
+    <h1>Book Character Analyzer</h1>
+    <form action="/process_file" method="post" enctype="multipart/form-data">
+        <label for="file">Upload a Text File:</label>
+        <input type="file" name="file" id="file" accept=".txt">
+        <input type="submit" value="Process">
+    </form>
+</body>
+</html>

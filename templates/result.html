@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BookNER Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/result_styles.css') }}">
+</head>
+<body>
+    <h1>Results for the given text</h1>
+
+    <div class="entity-columns">
+        {% for entity_group, inner_dict in entity_counter.items() %}
+            <div class="entity-group">
+                <h2>{{ entity_group }}</h2>
+                <ul>
+                    {% for entity_word, count in inner_dict.items() %}
+                        <li>{{ entity_word }} - Count: {{ count }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
