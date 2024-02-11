@@ -1,15 +1,15 @@
 from collections import defaultdict
+from pprint import pprint
 from flask import Flask, render_template, request
 from transformers import pipeline
 
 app = Flask(__name__)
 
 # Load model
-# pipe = pipeline("ner", model="dslim/bert-base-NER", grouped_entities=True)
-pipe = pipeline("ner", model="dbmdz/bert-large-cased-finetuned-conll03-english", grouped_entities=True)
-# pipe = pipeline("ner", model="FacebookAI/xlm-roberta-large-finetuned-conll03-english", grouped_entities=True)
-# pipe = pipeline("ner", model="Babelscape/wikineural-multilingual-ner", grouped_entities=True)
-# pipe = pipeline("token-classification", model="Davlan/bert-base-multilingual-cased-ner-hrl")
+# pipe = pipeline("ner", model="dslim/bert-base-NER", aggregation_strategy='average')
+# pipe = pipeline("ner", model="dbmdz/bert-large-cased-finetuned-conll03-english", aggregation_strategy='average')
+# pipe = pipeline("ner", model="Babelscape/wikineural-multilingual-ner", aggregation_strategy='average')
+pipe = pipeline("ner", model="Davlan/bert-base-multilingual-cased-ner-hrl", aggregation_strategy='average')
 
 def process_text_chunk(chunk):
     return pipe(chunk)
@@ -35,11 +35,11 @@ def process_file():
                 if not chunk:
                     break
                 
-                chunk_text = chunk.decode('utf-8')
-                entities.extend(process_text_chunk(chunk_text))
+                entities.extend(process_text_chunk(chunk.decode('utf-8')))
                 processed_size += chunk_size
                 print(processed_size)
 
+            pprint(entities)
             entity_group_full_name = {
                 "PER": "Person",
                 "LOC": "Location",
