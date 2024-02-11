@@ -1,5 +1,7 @@
 # Book Character Analyzer
 
+This website application is based around the concept of Natural Entity Recognition in fantasy books. It allows you to search for all the important features inside the book, such as characters, locations, and more. You can find a part of The Lord of the Rings book as an example in the `books/` folder.
+
 ### Setup
 
 ```

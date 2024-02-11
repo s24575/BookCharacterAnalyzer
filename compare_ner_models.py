@@ -1,8 +1,6 @@
-from pprint import pprint
 import pandas as pd
 from datasets import load_dataset
 from evaluate import evaluator
-from transformers import pipeline
 
 
 # Compare models using conll2003 dataset

@@ -1,5 +1,4 @@
 from collections import defaultdict
-from pprint import pprint
 from flask import Flask, render_template, request
 from transformers import pipeline
 
@@ -39,7 +38,6 @@ def process_file():
                 processed_size += chunk_size
                 print(processed_size)
 
-            pprint(entities)
             entity_group_full_name = {
                 "PER": "Person",
                 "LOC": "Location",
