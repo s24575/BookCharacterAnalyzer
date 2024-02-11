@@ -27,6 +27,8 @@ pip install -r requirements.txt
 
     python app.py
 
+##### Go to [http://localhost:5000](http://localhost:5000)
+
 ### Evaluate models
 
     python ner_model_comp.py
