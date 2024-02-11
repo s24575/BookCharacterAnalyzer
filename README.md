@@ -1,16 +1,32 @@
 # Book Character Analyzer
 
-### Install dependencies
+### Setup
 
-    python -m venv venv
-    pip install -r requirements.txt
-    .\venv\Scripts\activate # Windows
-    source venv/bin/activate # macOS/Linux
+```
+git clone https://github.com/s24575/BookCharacterAnalyzer.git
+```
 
-### How to run the website
+```
+cd BookCharacterAnalyzer
+```
+
+```
+python -m venv venv
+```
+
+```
+.\venv\Scripts\activate # Windows
+source venv/bin/activate # macOS/Linux
+```
+
+```
+pip install -r requirements.txt
+```
+
+### Run the website
 
     python app.py
 
-### How to evaluate models
+### Evaluate models
 
     python ner_model_comp.py
